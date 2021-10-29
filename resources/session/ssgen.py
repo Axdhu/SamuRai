@@ -65,11 +65,11 @@ def telethon_session():
 
     # logging in
     try:
-        with TelegramClient(StringSession(), API_ID, API_HASH) as samurai:
+        with TelegramClient(StringSession(), API_ID, API_HASH) as SamuRai:
             print("Generating a user session for SamuRai...")
-            ult = samurai.send_message(
+            ult = SamuRai.send_message(
                 "me",
-                f"**SamuRai** `SESSION`:\n\n`{samurai.session.save()}`\n\n**Do not share this anywhere!**",
+                f"**SamuRai** `SESSION`:\n\n`{SamuRai.session.save()}`\n\n**Do not share this anywhere!**",
             )
             print(
                 "Your SESSION has been generated. Check your telegram saved messages!"
