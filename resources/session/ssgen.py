@@ -65,7 +65,7 @@ def telethon_session():
 
     # logging in
     try:
-        with TelegramClient(StringSession(), API_ID, API_HASH) as ultroid:
+        with TelegramClient(StringSession(), API_ID, API_HASH) as samurai:
             print("Generating a user session for SamuRai...")
             ult = samurai.send_message(
                 "me",
