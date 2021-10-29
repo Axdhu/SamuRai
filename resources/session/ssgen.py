@@ -1,21 +1,13 @@
 #!/usr/bin/python3
-# Ultroid - UserBot
-# Copyright (C) 2021 TeamUltroid
-#
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+#Copyright (C) 2021 Axdhu/SamuRai
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 
 import os
 from time import sleep
 
 a = r"""
-  _    _ _ _             _     _
- | |  | | | |           (_)   | |
- | |  | | | |_ _ __ ___  _  __| |
- | |  | | | __| '__/ _ \| |/ _  |
- | |__| | | |_| | | (_) | | (_| |
-  \____/|_|\__|_|  \___/|_|\__,_|
+SamuRai
 """
 
 
@@ -28,7 +20,7 @@ def spinner():
 
 
 def clear_screen():
-    # https://www.tutorialspoint.com/how-to-clear-screen-in-python#:~:text=In%20Python%20sometimes%20we%20have,screen%20by%20pressing%20Control%20%2B%20l%20.
+    
     if os.name == "posix":
         os.system("clear")
     else:
@@ -38,7 +30,7 @@ def clear_screen():
 
 def get_api_id_and_hash():
     print(
-        "Get your API ID and API HASH from my.telegram.org or @ScrapperRoBot to proceed.\n\n",
+        "Get your API ID and API HASH from my.telegram.org  to proceed.\n\n",
     )
     try:
         API_ID = int(input("Please enter your API ID: "))
@@ -74,10 +66,10 @@ def telethon_session():
     # logging in
     try:
         with TelegramClient(StringSession(), API_ID, API_HASH) as ultroid:
-            print("Generating a user session for Ultroid...")
-            ult = ultroid.send_message(
+            print("Generating a user session for SamuRai...")
+            ult = samurai.send_message(
                 "me",
-                f"**ULTROID** `SESSION`:\n\n`{ultroid.session.save()}`\n\n**Do not share this anywhere!**",
+                f"**SamuRai** `SESSION`:\n\n`{samurai.session.save()}`\n\n**Do not share this anywhere!**",
             )
             print(
                 "Your SESSION has been generated. Check your telegram saved messages!"
