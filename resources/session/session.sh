@@ -1,20 +1,9 @@
 #!/usr/bin/env bash
-# Ultroid - UserBot
-# Copyright (C) 2021 TeamUltroid
-#
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
-# PLease read the GNU Affero General Public License in <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+#Copyright (C) 2021 Axdhu/SamuRai
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 
 clear
-echo -e "\e[1m"
-echo "  _    _ _ _             _     _ "
-echo " | |  | | | |           (_)   | |"
-echo " | |  | | | |_ _ __ ___  _  __| |"
-echo " | |  | | | __| '__/ _ \| |/ _  |"
-echo " | |__| | | |_| | | (_) | | (_| |"
-echo "  \____/|_|\__|_|  \___/|_|\__,_|"
-echo -e "\e[0m"
-sec=5
 spinner=(⣻ ⢿ ⡿ ⣟ ⣯ ⣷)
 while [ $sec -gt 0 ]; do
     echo -ne "\e[33m ${spinner[sec]} Starting dependency installation in $sec seconds...\r"
