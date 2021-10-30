@@ -1,1 +1,1 @@
-python3 -m userbot
+ worker: bash init/start.sh
