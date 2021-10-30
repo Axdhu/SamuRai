@@ -10,7 +10,7 @@ import traceback
 
 import requests
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import samurai_on_cmd
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
@@ -18,7 +18,7 @@ from main_startup.helper_func.basic_helpers import (
     get_text,
 )
 
-@friday_on_cmd(
+@samurai_on_cmd(
     cmd=["exec", "eval"],
     ignore_errors=True,
     cmd_help={"help": "Run Python Code!", "example": '{ch}eval print("FridayUserBot")'},
@@ -67,7 +67,7 @@ async def aexec(code, client, message):
     )
     return await locals()["__aexec"](client, message)
 
-@friday_on_cmd(
+@samurai_on_cmd(
     cmd=["bash", "terminal"],
     ignore_errors=True,
     cmd_help={"help": "Run Bash/Terminal Command!", "example": "{ch}bash ls"},
