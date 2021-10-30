@@ -9,7 +9,7 @@ from pyrogram import filters
 from database.gbandb import gban_info, gban_list, gban_user, ungban_user
 from database.gmutedb import gmute, is_gmuted, ungmute
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd, listen
+from main_startup.core.decorators import samurai_on_cmd, listen
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
     edit_or_send_as_file,
@@ -22,7 +22,7 @@ from plugins import devs_id
 from database.sudodb import sudo_list
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["gmute"],
     cmd_help={
         "help": "Globally Mute The User!",
@@ -64,7 +64,7 @@ async def gmute_him(client, message):
     await log.log_msg(client, gmu)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["ungmute"],
     cmd_help={
         "help": "Globally UnMute The User!",
@@ -101,7 +101,7 @@ async def gmute_him(client, message):
     await log.log_msg(client, ugmu)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["gban"],
     cmd_help={
         "help": "Globally Ban The User!",
@@ -156,7 +156,7 @@ async def gbun_him(client, message):
     await log.log_msg(client, gbanned)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["ungban"],
     cmd_help={
         "help": "Globally Unban The User!",
@@ -230,7 +230,7 @@ async def watch(client, message):
             f"**#GbanWatch** \n**Chat ID :** `{message.chat.id}` \n**User :** `{user}` \n**Reason :** `{await gban_info(user)}`",
         )
     
-@friday_on_cmd(
+@samurai_on_cmd(
     ["gbanlist"],
     cmd_help={
         "help": "Get List Of Globally Banned Users!",
@@ -250,7 +250,7 @@ async def give_glist(client, message):
     await edit_or_send_as_file(oof, glist, client, "GbanList", "Gban-List")
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["gbroadcast"],
     cmd_help={
         "help": "Send Message To All Chats, You Are In!",
