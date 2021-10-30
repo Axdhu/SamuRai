@@ -5,12 +5,12 @@
 
 
 from main_startup import CMD_LIST, bot, XTRA_CMD_LIST
-from main_startup.core.decorators import Config, friday_on_cmd
+from main_startup.core.decorators import Config, samurai_on_cmd
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["help", "helper"],
     cmd_help={
         "help": "Gets Help Menu",
@@ -44,7 +44,7 @@ async def help(client, message):
             await f_.edit(help_s)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["ahelp", "ahelper"],
     cmd_help={
         "help": "Gets Help List & Info",
