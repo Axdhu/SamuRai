@@ -40,7 +40,7 @@ tg_senderror() {
     fi
     tg_sendinfo "<code>Build Throwing Error(s)!</code>" \
         "${REVIEWERS} please take a look!" \
-        "Logs: https://semaphoreci.com/zakaryan2004/telegram-paperplane"
+        "Logs: https://github.com/Axdhu/SamuRai"
 
     [ -n "${STATUS}" ] &&
     exit "${STATUS}" ||
