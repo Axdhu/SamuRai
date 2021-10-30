@@ -4,6 +4,15 @@
 #PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 
 clear
+echo -e "\e[1m"
+echo "                                     _ 
+echo "                                    (_)
+echo "  ___  __ _ _ __ ___  _   _ _ __ __ _ _ 
+echo " / __|/ _` | '_ ` _ \| | | | '__/ _` | |
+echo " \__ \ (_| | | | | | | |_| | | | (_| | |
+echo " |___/\__,_|_| |_| |_|\__,_|_|  \__,_|_|
+echo -e "\e[0m"
+sec=5
 spinner=(⣻ ⢿ ⡿ ⣟ ⣯ ⣷)
 while [ $sec -gt 0 ]; do
     echo -ne "\e[33m ${spinner[sec]} Starting dependency installation in $sec seconds...\r"
