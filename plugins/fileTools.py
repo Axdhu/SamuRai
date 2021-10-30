@@ -13,7 +13,7 @@ import uuid
 import img2pdf
 from fsplit.filesplit import Filesplit
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import samurai_on_cmd
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
     get_text,
@@ -22,7 +22,7 @@ from main_startup.helper_func.basic_helpers import (
 )
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["chnnlzip", "channelzip"],
     cmd_help={
         "help": "Zips All The Messages/Files/Everything From A Channel/Group",
@@ -64,7 +64,7 @@ async def chnnlzip(client, message):
     await pablo.edit(
         engine.get_string("FILE_TOOLS_2").format(total, media_count, text_count)
     )
-    shutil.make_archive(str(f"{chnnl}_ZippedByFridayUB"), "zip", dirz)
+    shutil.make_archive(str(f"{chnnl}_ZippedBysamuraiUB"), "zip", dirz)
     await pablo.edit("`Zipped! Uploading Now!`")
     zip_name = f"{chnnl}_ZippedByFridayUB.zip"
     siz_e = os.stat(zip_name).st_size
@@ -113,7 +113,7 @@ def file_list(path, lisT):
     return lisT
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["pdf", "channelpdf"],
     cmd_help={
         "help": "Makes A PDF With All Images In Group/Channel!",
@@ -144,16 +144,16 @@ async def chnnlpdf(client, message):
         await pablo.edit(engine.get_string("IMAGE_NOT_FOUND").format("This Chat"))
         shutil.rmtree(dirz)
         return
-    with open("imagetopdf@fridayot.pdf", "wb") as f:
+    with open("imagetopdf@samuraiot.pdf", "wb") as f:
         f.write(img2pdf.convert(images_path))
     capt = f"**CONVERTED** \n**Total Images :** `{len(images_path)}` \n**Channel / Group :** `{chnnl}`"
-    await client.send_document(message.chat.id, "imagetopdf@fridayot.pdf", caption=capt)
-    os.remove("imagetopdf@fridayot.pdf")
+    await client.send_document(message.chat.id, "imagetopdf@samuraiot.pdf", caption=capt)
+    os.remove("imagetopdf@samuraiot.pdf")
     shutil.rmtree(dirz)
     await pablo.delete()
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["Download"],
     cmd_help={
         "help": "Downloads Replied File To Local Storage!",
@@ -179,7 +179,7 @@ async def Download(client, message):
     await pablo.edit(engine.get_string("FILE_TOOLS_5").format(Escobar, dl_time))
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["setthumb"],
     cmd_help={
         "help": "Set Thumbnail For Upload Files!",
@@ -207,7 +207,7 @@ sticker_ext = tuple([".wepb", ".tgs"])
 song_ext = tuple([".mp3", ".wav", ".m4a"])
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["Upload"],
     cmd_help={
         "help": "Upload Internal File!",
