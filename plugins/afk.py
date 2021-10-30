@@ -8,6 +8,9 @@ from datetime import datetime
 
 from telethon import filters
 from telethon.tl import functions, types
+from telethon import Button, functions
+from telethon.events import CallbackQuery
+from telethon.utils import get_display_name
 
 from database.afk import check_afk, go_afk, no_afk
 from main_startup.config_var import Config
