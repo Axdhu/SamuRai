@@ -5,7 +5,7 @@
 
 clear
 
-spinner=(⣻ ⢿ ⡿ ⣟ ⣯ ⣷)
+
 while [ $sec -gt 0 ]; do
     echo -ne "\e[33m ${spinner[sec]} Starting dependency installation in $sec seconds...\r"
     sleep 1
