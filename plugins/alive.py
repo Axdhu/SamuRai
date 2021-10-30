@@ -61,7 +61,7 @@ async def amireallyalive(event):
     )
     if samurai_IMG:
         samurai = [x for x in samurai_IMG.split()]
-        PIC = random.choice(CAT)
+        PIC = random.choice(SAMURAI)
         try:
             await event.client.send_file(
                 event.chat_id, PIC, caption=caption, reply_to=reply_to_id
