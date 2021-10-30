@@ -1,16 +1,10 @@
-# Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
-#
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/DevsExpo/blob/master/LICENSE >
-#
-# All rights reserved.
+
 
 import logging
 import os
 import time
 import motor.motor_asyncio
-from pyrogram import Client
+from telethon import Client
 
 from .config_var import Config
 
@@ -52,39 +46,39 @@ if not Config.LOG_GRP:
 
 # Clients - Upto 4 Clients is Supported!
 if Config.STRINGSESSION:
-    Friday = Client(
+    samurai = Client(
         Config.STRINGSESSION,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
 if Config.STRINGSESSION_2:
-    Friday2 = Client(
+    samurai2 = Client(
         Config.STRINGSESSION_2,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
 else:
-    Friday2 = None
+    samurai2 = None
 if Config.STRINGSESSION_3:
-    Friday3 = Client(
+    samurai3 = Client(
         Config.STRINGSESSION_3,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
 else:
-    Friday3 = None
+    samurai3 = None
 if Config.STRINGSESSION_4:
-    Friday4 = Client(
+    samurai4 = Client(
         Config.STRINGSESSION_4,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         sleep_threshold=180,
     )
 else:
-    Friday4 = None
+    samurai4 = None
 
 if Config.BOT_TOKEN:
     bot = Client(
