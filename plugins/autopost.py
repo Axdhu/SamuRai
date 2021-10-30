@@ -17,11 +17,11 @@ from main_startup.core.decorators import friday_on_cmd, listen
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["autopost"],
     cmd_help={
         "help": "Add Channel To AutoPost List!",
-        "example": "{ch}autopost @fridaysupportofficial",
+        "example": "{ch}autopost @samuraisupportofficial",
     },
     chnnl_only=True,
 )
@@ -49,11 +49,11 @@ async def autopost(client, message):
     await mess_age_.edit(engine.get_string("AUTOPOSTING_1").format(chnnl))
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["rmautopost"],
     cmd_help={
         "help": "Remove A Channel From Autopost List",
-        "example": "{ch}rmautopost @fridaysupportofficial",
+        "example": "{ch}rmautopost @samuraisupportofficial",
     },
     chnnl_only=True,
 )
