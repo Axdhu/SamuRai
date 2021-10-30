@@ -13,7 +13,7 @@ from database.autopostingdb import (
     del_autopost,
     get_autopost,
 )
-from main_startup.core.decorators import friday_on_cmd, listen
+from main_startup.core.decorators import samurai_on_cmd, listen
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 
 
