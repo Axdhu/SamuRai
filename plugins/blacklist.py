@@ -14,7 +14,7 @@ from database.blacklistdb import (
     get_chat_blacklist,
     is_blacklist_in_db,
 )
-from main_startup.core.decorators import friday_on_cmd, listen
+from main_startup.core.decorators import samurai_on_cmd, listen
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
     edit_or_send_as_file,
@@ -23,7 +23,7 @@ from main_startup.helper_func.basic_helpers import (
 from main_startup.helper_func.logger_s import LogIt
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     [
         "saveblacklist",
         "saveblockist",
@@ -52,7 +52,7 @@ async def addblacklist(client, message):
     await messag_e_.edit(engine.get_string('BLACKLIST_2').format(blacklist))
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["listblacklist", "listblocklist"],
     cmd_help={"help": "Check Blacklist List!", "example": "{ch}listblocklist"},
 )
@@ -68,7 +68,7 @@ async def listblacklist(client, message):
     await edit_or_send_as_file(OUT_STR, messag_e_, client, "Blacklist", "blacklist")
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["delblacklist", "rmblacklist", "delblockist", "rmblocklist"],
     cmd_help={
         "help": "Remove Text From Blacklist / Blocklist!",
@@ -114,7 +114,7 @@ async def activeblack(client, message):
     
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["delblacklists", "rmblacklists", "delblockists", "rmblocklists"],
     cmd_help={
         "help": "Remove Everything From Blocklist!",
