@@ -6,11 +6,12 @@
 import asyncio
 from datetime import datetime
 
-from pyrogram import filters
+from telethon import filters
+from telethon.tl import functions, types
 
 from database.afk import check_afk, go_afk, no_afk
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd, listen
+from main_startup.core.decorators import samurai_on_cmd, listen
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup.helper_func.logger_s import LogIt
 afk_sanity_check: dict = {}
@@ -27,7 +28,7 @@ async def is_afk_(f, client, message):
 is_afk = filters.create(func=is_afk_, name="is_afk_")
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["afk"],
     propagate_to_next_handler=False,
     cmd_help={
