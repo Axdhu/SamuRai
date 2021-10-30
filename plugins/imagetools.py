@@ -22,7 +22,7 @@ from pygifsicle import optimize
 from telegraph import Telegraph, exceptions, upload_file
 
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import samurai_on_cmd
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup.helper_func.plugin_helpers import (
@@ -41,7 +41,7 @@ r = telegraph.create_account(short_name="FridayUserBot")
 auth_url = r["auth_url"]
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["hwn", "Improvisenote"],
     cmd_help={
         "help": "enhance the replied notes!",
@@ -71,7 +71,7 @@ async def hwn(client, message):
     os.remove(imag_e)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["glitch"],
     cmd_help={
         "help": "Glitch the replied image/sticker!",
@@ -112,7 +112,7 @@ async def glitchtgi(client, message):
     await pablo.delete()
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["memify"],
     cmd_help={
         "help": "Make Memes With the replied image/sticker!",
@@ -157,7 +157,7 @@ async def momify(client, message):
     await owo.delete()
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["flip"],
     cmd_help={
         "help": "flip the replied image/sticker!",
@@ -191,7 +191,7 @@ async def flips(client, message):
         if files and os.path.exists(files):
             os.remove(files)
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["imgnote"],
     cmd_help={
         "help": "Crop Image Into Round & Cool Sticker",
@@ -226,7 +226,7 @@ async def c_imagenote(client, message):
             os.remove(files)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["mirror"],
     cmd_help={
         "help": "mirror the replied image/sticker!",
@@ -261,7 +261,7 @@ async def mirrorlol(client, message):
             os.remove(files)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["ghost"],
     cmd_help={
         "help": "ghost the replied image/sticker!",
@@ -297,7 +297,7 @@ async def oohno(client, message):
             os.remove(files)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["sketch"],
     cmd_help={
         "help": "sketch the replied image/sticker!",
@@ -346,7 +346,7 @@ def dodgeV2(image, mask):
     return cv2.divide(image, 255 - mask, scale=256)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["genca", "gencertificate"],
     cmd_help={
         "help": "Get Fake Certificate With Given Name!",
@@ -388,7 +388,7 @@ async def getfakecertificate(client, message):
         os.remove(ok)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["thug"],
     cmd_help={
         "help": "thug the replied image/sticker!",
@@ -434,7 +434,7 @@ async def weallarethugs(client, message):
             os.remove(files)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["toon"],
     cmd_help={
         "help": "toonify the replied image/sticker!",
@@ -469,7 +469,7 @@ async def toonize(client, message):
             os.remove(files)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["lnews"],
     cmd_help={
         "help": "Create Fake News With Text Headlines and replied image/sticker!",
@@ -518,7 +518,7 @@ async def wewnews(client, message):
             os.remove(files)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["colorize"],
     cmd_help={
         "help": "Colorise the replied Back&white image/sticker!",
@@ -575,7 +575,7 @@ async def color_magic(client, message):
             os.remove(files)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["spin"],
     cmd_help={
         "help": "Spin the replied image/sticker!",
@@ -638,7 +638,7 @@ async def spin(client, message):
     rmtree(path, ignore_errors=True)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["ph"],
     cmd_help={
         "help": "Create Fake PornHub Comment With Given Name And Text!",
@@ -682,7 +682,7 @@ async def ph(client, message):
     await pablo.delete()
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["fgs"],
     cmd_help={
         "help": "Create Fake Google Search!",
@@ -730,7 +730,7 @@ async def fgs(client, message):
         os.remove(file_name)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["jail"],
     cmd_help={
         "help": "Jail the replied image/sticker!",
@@ -788,7 +788,7 @@ async def jail(client, message):
         os.remove(file_name)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["picgen", "fakepic", "fpic"],
     cmd_help={"help": "Generates Fake Image!", "example": "{ch}picgen"},
 )
@@ -800,7 +800,7 @@ async def picgen(client, message):
     if response.status_code == 200:
         with open("FRIDAYOT.jpg", "wb") as f:
             f.write(response.content)
-    captin = f"Fake Image By Friday.\nGet Your Own Friday From @FRIDAYCHAT."
+    captin = f"Fake Image By Friday.\nGet Your Own Friday From @SAMURAICHAT."
     fole = "FRIDAYOT.jpg"
     if message.reply_to_message:
         await client.send_photo(
@@ -816,7 +816,7 @@ async def picgen(client, message):
         os.remove(fole)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["slogo"],
     cmd_help={
         "help": "Create A logo with given text!",
@@ -861,14 +861,14 @@ async def slogo(client, message):
         )
     else:
         await client.send_photo(
-            message.chat.id, photo=fname2, caption="Made Using FridayUserBot"
+            message.chat.id, photo=fname2, caption="Made Using samuraiUserBot"
         )
     await event.delete()
     if os.path.exists(fname2):
         os.remove(fname2)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["adityalogo", "alogo"],
     cmd_help={
         "help": "Create AdityaLogo With Given Text!",
@@ -906,7 +906,7 @@ async def adityalogo(client, message):
         )
     else:
         await client.send_photo(
-            message.chat.id, photo=file_name, caption="Made Using FridayUserBot"
+            message.chat.id, photo=file_name, caption="Made Using samuraiUserBot"
         )
     await client.send_chat_action(message.chat.id, "cancel")
     await event.delete()
@@ -914,7 +914,7 @@ async def adityalogo(client, message):
         os.remove(file_name)
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["stcr"],
     cmd_help={
         "help": "Create Cool Stickers !",
