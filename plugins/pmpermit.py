@@ -1,15 +1,12 @@
-# Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
-#
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/DevsExpo/blob/master/LICENSE >
-#
-# All rights reserved.
+
 
 import asyncio
 import os
 
-from pyrogram import filters
+from telethon import filters
+from telethon import Button, functions
+from telethon.events import CallbackQuery
+from telethon.utils import get_display_name
 
 from database.bot_settings_db import (
     add_pm_text,
@@ -35,7 +32,7 @@ from plugins import devs_id
 
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["setpmtext"],
     cmd_help={
         "help": "Set Custom On Text!",
@@ -66,7 +63,7 @@ async def set_custom_pm_texts(client, message):
     await message.edit(engine.get_string("PM_MSG_CHANGED").format(ptext))
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["setpmlimit"],
     cmd_help={
         "help": "Set Pm Limit!",
@@ -93,7 +90,7 @@ async def set_custom_pm_limit(client, message):
     await message.edit(engine.get_string("SUCCESS_CHANGED").format(ptext))
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["block"],
     cmd_help={
         "help": "Block Replied User!",
@@ -131,7 +128,7 @@ async def blockz(client, message):
         await message.delete()
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["unblock"],
     cmd_help={
         "help": "Unblock Replied Uset!",
@@ -159,7 +156,7 @@ async def unmblock(client, message):
         await message.delete()
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["a", "accept", "allow"],
     cmd_help={
         "help": "Allow User To Pm you!",
@@ -212,7 +209,7 @@ async def allow(client, message):
         await message.delete()
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["da", "disaccept", "disallow", "disapprove"],
     cmd_help={
         "help": "Disallow User To Pm you!",
@@ -265,7 +262,7 @@ async def disallow(client, message):
         await message.delete()
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["setpmpic", "spp"],
     cmd_help={
         "help": "Set Replied Image As Your Pm Permit Image.",
