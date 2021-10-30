@@ -6,12 +6,12 @@
 import asyncio
 import os
 import shutil as sht
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import samurai_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup.helper_func.basic_helpers import edit_or_reply
 from main_startup.core.startup_helpers import load_plugin
 
-@friday_on_cmd(['ls'],
+@samurai_on_cmd(['ls'],
     cmd_help={
     "help": "lists files and folder in the specified directory",
     "example": "{ch}ls /plugins or {ch}ls /"
@@ -31,7 +31,7 @@ async def list_files(client, message):
       the_file = the_file.replace(",", "\n•")
       await plug.edit(f"Files in `{text}` are : \n \n{the_file}")
       
-@friday_on_cmd(["remove"],
+@samurai_on_cmd(["remove"],
     cmd_help={
     "help": "Removes files from the given directory",
     "example": "{ch}remove /download/...."
@@ -49,7 +49,7 @@ async def remove_file(client, message):
         await plug.edit(f"The file `{text}` has been removed successfully!!!")
         os.remove(f"/{text}")
         
-@friday_on_cmd(["cdownload", "cd"],
+@samurai_on_cmd(["cdownload", "cd"],
     cmd_help={
     "help": "downloads any file to a custom directory",
     "example": "{ch}cdownload or {ch}cd /directory/path "
@@ -81,7 +81,7 @@ async def custom_download(client, message):
     
     await text.edit(f"Sucessfully downloaded `{d_file_name}` to the `{dir}` directory!")
     
-@friday_on_cmd(["sendfile", "sf"],
+@samurai_on_cmd(["sendfile", "sf"],
     cmd_help={
     "help": "sends any file from the directory",
     "example": "{ch}sendfile /plugins/sendfile.py or {ch}sf <file path>"
@@ -99,7 +99,7 @@ async def send_file(client, message):
   await asyncio.sleep(1)
   await plug.delete()
   
-@friday_on_cmd(["font", "finst"],
+@samurai_on_cmd(["font", "finst"],
     cmd_help={
     "help": "installs a font to the default directory",
     "example": "{ch}font or {ch}finst <reply to font file>"
@@ -131,7 +131,7 @@ async def font_install(client, message):
     
     await fontt.edit(f"Sucessfully Installed **{font_file_name}**!")
 	
-@friday_on_cmd(["copy", "cp"],
+@samurai_on_cmd(["copy", "cp"],
     cmd_help={
     "help": "copies files from one directory to another",
     "example": "{ch}copy or {ch}cp /dir1/file1.ext | /dir2/"
@@ -191,7 +191,7 @@ async def copy_files(client, message):
             await copier.edit("An unknown error has occured!!! Please, report in @FridayChat. \n **Type code : `Else all`**")
             return
 
-@friday_on_cmd(["move", "mv"],
+@samurai_on_cmd(["move", "mv"],
     cmd_help={
     "help": "copies files from one directory to another",
     "example": "{ch}move or {ch}mv /dir1/file1.ext | /dir2/"
@@ -252,7 +252,7 @@ async def move_files(client, message):
             await mover.edit("An unknown error has occured!!! Please, report in @FridayChat. \n **Type code : `Else all`**")
             return
 
-@friday_on_cmd(["rnm"],
+@samurai_on_cmd(["rnm"],
     cmd_help={
     "help": "Rename files in the directory",
     "example": "{ch}rnm /dir1/file1.ext | file2.ext"
