@@ -6,7 +6,8 @@
 import asyncio
 from datetime import datetime
 
-from pyrogram import filters
+from telethon import filters
+from telethon import events
 
 from database.afk import check_afk, go_afk, no_afk
 from main_startup.config_var import Config
