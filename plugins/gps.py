@@ -8,13 +8,13 @@ import os
 
 from geopy.geocoders import Nominatim
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import samurai_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 
 GMAPS_LOC = "https://maps.googleapis.com/maps/api/geocode/json"
 
 
-@friday_on_cmd(
+@samurai_on_cmd(
     ["gps"],
     cmd_help={
         "help": "Find and send the given location",
