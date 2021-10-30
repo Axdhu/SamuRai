@@ -1,10 +1,4 @@
-# Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
-#
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/DevsExpo/blob/master/LICENSE >
-#
-# All rights reserved.
+
 
 import inspect
 import logging
@@ -13,23 +7,23 @@ from datetime import datetime
 from traceback import format_exc
 import asyncio
 import pytz
-from pyrogram import ContinuePropagation, StopPropagation, filters
-from pyrogram.errors.exceptions.bad_request_400 import (
+from telethon import ContinuePropagation, StopPropagation, filters
+from telethon.errors.exceptions.bad_request_400 import (
     MessageIdInvalid,
     MessageNotModified,
     MessageEmpty,
     UserNotParticipant
 )
-from pyrogram.handlers import MessageHandler
+from telethon.handlers import MessageHandler
 
 from main_startup import (
     CMD_LIST,
     XTRA_CMD_LIST,
     Config,
-    Friday,
-    Friday2,
-    Friday3,
-    Friday4,
+    samurai,
+    samurai,
+    samurai,
+    samurai,
     bot
 )
 from main_startup.config_var import Config
