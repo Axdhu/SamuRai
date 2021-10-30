@@ -80,20 +80,6 @@ SPOTIFY_PASS = os.environ.get("SPOTIFY_PASS") or None
 BIO_PREFIX = os.environ.get("BIO_PREFIX") or None
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or None
 
-LASTFM_API = os.environ.get("LASTFM_API") or None
-LASTFM_SECRET = os.environ.get("LASTFM_SECRET") or None
-LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME") or None
-LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD") or None
-LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
-if not LASTFM_USERNAME == "None":
-    lastfm = LastFMNetwork(
-        api_key=LASTFM_API,
-        api_secret=LASTFM_SECRET,
-        username=LASTFM_USERNAME,
-        password_hash=LASTFM_PASS,
-    )
-else:
-    lastfm = None
 
 GDRIVE_FOLDER = os.environ.get("GDRIVE_FOLDER") or None
 
