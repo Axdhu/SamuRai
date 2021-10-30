@@ -80,6 +80,11 @@ SPOTIFY_PASS = os.environ.get("SPOTIFY_PASS") or None
 BIO_PREFIX = os.environ.get("BIO_PREFIX") or None
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or None
 
+LASTFM_API=os.environ.get("LASTFM_API") or None
+LASTFM_SECRET=os.environ.get("LASTFM_SECRET") or None
+LASTFM_USERNAME=os.environ.get("LASTFM_USERNAME") or None
+LASTFM_PASSWORD=os.environ.get("LASTFM_PASSWORD") or None
+
 
 GDRIVE_FOLDER = os.environ.get("GDRIVE_FOLDER") or None
 
