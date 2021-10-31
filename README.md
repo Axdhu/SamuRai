@@ -27,11 +27,8 @@ Deploy to Heroku
 # <h1>ping! pong<h1>
 
 
-## Credit
 
-* [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
 I
 
-And [others](https://github.com/Axdhu/SamuRai) that help to make this userbot awesome.
 
 
