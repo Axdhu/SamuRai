@@ -1,8 +1,7 @@
-# Copyright (C) 2020 Adek Maulana.
-# All rights reserved.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
 """Heroku manager for your userbot"""
 
@@ -13,14 +12,14 @@ import math
 import os
 import requests
 
-from userbot import (
+from samurai import (
     CMD_HELP,
     HEROKU_APP_NAME,
     HEROKU_API_KEY,
     BOTLOG_CHATID
 )
 
-from userbot.events import register
+from samurai.events import register
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
