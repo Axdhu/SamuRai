@@ -1,10 +1,8 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
-# Random RGB Sticklet by @PhycoNinja13b
-# modified by @AnggaR96s
 
 
 import io
@@ -15,8 +13,8 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
-from userbot import CMD_HELP
-from userbot.events import register
+from samurai import CMD_HELP
+from samurai.events import register
 
 
 @register(outgoing=True, pattern=r"^\.rgb (.*)")
