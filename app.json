@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Axdhu/SamuRai",
+  "repository": "https://github.com/Axdhu/SamuRai.git",
   
   "env": {
     "API_KEY": {
