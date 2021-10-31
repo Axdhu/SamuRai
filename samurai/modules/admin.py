@@ -1,7 +1,9 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
+#
+# All rights reserved.
 """
 Userbot module to help you manage a group
 """
@@ -23,8 +25,8 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                MessageEntityMentionName, MessageMediaPhoto,
                                ChannelParticipantsBots, PeerChat)
 
-from userbot import BOTLOG_CHATID, CMD_HELP, bot
-from userbot.events import register
+from samurai import BOTLOG_CHATID, CMD_HELP, bot
+from samurai.events import register
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
