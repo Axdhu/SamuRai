@@ -1,7 +1,8 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
+#
 """Userbot module for having some fun with people."""
 
 from asyncio import sleep
@@ -15,9 +16,9 @@ import requests
 
 from cowpy import cow
 
-from userbot import CMD_HELP
-from userbot.events import register
-from userbot.modules.admin import get_user_from_event
+from samurai import CMD_HELP
+from samurai.events import register
+from samurai.modules.admin import get_user_from_event
 
 # ================= CONSTANT =================
 METOOSTR = [
