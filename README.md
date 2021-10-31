@@ -18,5 +18,18 @@ $ cd sessiongen
 $ bash sessiongen
 ```
 
+## How To Host
+
+Deploy to Heroku
+
+<p><a href="https://heroku.com/deploy?template=https://github.com/Axdhu/SamuRai/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" target="_blank" /></a></p>
+
+
+## Credit
+
+* [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
+I
+
+And [others](https://github.com/Axdhu/SamuRai) that help to make this userbot awesome.
 
 
