@@ -9,6 +9,6 @@ RUN mkdir /root/samurai/bin/
 WORKDIR /root/samurai/
 
 # Make open port TCP
-EXPOSE 80 
+EXPOSE 80 443
 
 CMD ["python3","-m","samurai"]
