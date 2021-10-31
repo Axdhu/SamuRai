@@ -1,12 +1,13 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
+#
 
 import os
 import requests
-from userbot import bot, OCR_SPACE_API_KEY, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
+from samurai import bot, OCR_SPACE_API_KEY, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from samurai.events import register
 
 
 async def ocr_space_file(filename,
