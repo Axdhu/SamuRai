@@ -1,8 +1,9 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
+
 """Userbot module containing commands for interacting with dogbin(https://del.dog)"""
 
 import os
@@ -11,8 +12,8 @@ import aiohttp
 from aiohttp.client_exceptions import ClientConnectorError
 from requests import get, exceptions
 
-from userbot import BOTLOG_CHATID, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
+from samurai import BOTLOG_CHATID, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from samurai.events import register
 
 
 class PasteBin:
