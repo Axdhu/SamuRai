@@ -1,16 +1,12 @@
 {
-  "name": "Telegram samurai",
-  "description": "[samurai] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database.",
-  "logo": "https://telegra.ph/file/570dc35a7b34332eaa1db.jpg",
+  "name": "samurai-Userbot",
+  "description": "A Userbot Based On Pyrogram.",
   "keywords": [
     "telegram",
-    "userbot",
     "plugin",
-    "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Axdhu/SamuRai.git",
-  
+  "repository": "https://github.com/Axdhu/SamuRai",
   "env": {
     "API_KEY": {
       "description": "Get this value from my.telegram.org.",
