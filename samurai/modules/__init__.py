@@ -1,10 +1,12 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
+# All rights reserved.
+
 """Init file which loads all of the modules"""
-from userbot import LOGS
+from samurai import LOGS
 
 
 def __list_all_modules():
