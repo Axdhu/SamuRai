@@ -22,7 +22,7 @@ $ bash sessiongen
 
 Deploy to Heroku
 
-<p><a href="https://heroku.com/deploy?template=https://github.com/Axdhu/SamuRai/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" target="_blank" /></a></p>
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Axdhu/SamuRai)
 
 
 ## Credit
