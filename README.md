@@ -7,7 +7,7 @@
 
 
 # String Session - Telethon 🖱
-### Repl 🧨
+### Repl 📟
 
 <a href="https://replit.com/@Donbosco1/SamuRaisessongen"><img src="https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
