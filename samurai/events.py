@@ -16,7 +16,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from userbot import bot, BOTLOG_CHATID, LOGSPAMMER
+from samurai import bot, BOTLOG_CHATID, LOGSPAMMER
 
 
 def register(**args):
