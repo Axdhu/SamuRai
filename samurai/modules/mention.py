@@ -1,6 +1,7 @@
-# Ported by @KenHV
-# TG-UserBot - A modular Telegram UserBot script for Python.
-# Copyright (C) 2019  Kandarp <https://github.com/kandnub>
+#Copyright (C) 2021 Axdhu/SamuRai
+#
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
 # TG-UserBot is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,8 +20,8 @@ import re
 
 from telethon.tl import types
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from smurai import CMD_HELP, bot
+from samurai.events import register
 
 usernexp = re.compile(r"@(\w{3,32})\[(.+?)\]")
 nameexp = re.compile(r"\[([\w\S]+)\]\(tg://user\?id=(\d+)\)\[(.+?)\]")
