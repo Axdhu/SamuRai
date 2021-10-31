@@ -10,7 +10,7 @@
 
 import io
 import re
-import userbot.modules.sql_helper.blacklist_sql as sql
+import samurai.modules.sql_helper.blacklist_sql as sql
 from asyncio import sleep
 from samurai import CMD_HELP
 from samurai.events import register
