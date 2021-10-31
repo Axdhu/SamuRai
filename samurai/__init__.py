@@ -86,7 +86,7 @@ GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/mrmissx/UserButt.git")
+    "UPSTREAM_REPO_URL", "https://github.com/Axdhu/SamuRai.git")
 UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "sql-extended")
 
 # Console verbose logging
@@ -153,7 +153,7 @@ TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
     "TMP_DOWNLOAD_DIRECTORY", "./downloads/")
 
 # Terminal alias
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "UserButt")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "SAMURAI")
 
 # Zipfile module
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
@@ -270,7 +270,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("I'm [UserButt](https://github.com/mrmissx/userbutt) modules helper...\nplease make your own bot, don't use mine 😋")
+                await event.reply("I'm [UserButt](https://github.com/Axdhu/SamuRai) modules helper...\nplease make your own bot, don't use mine 😋")
             else:
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
 
@@ -279,7 +279,7 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@UserButt"):
+            if event.query.user_id == uid and query.startswith("@SAMURAI"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Please Use Only With .help Command",
@@ -304,10 +304,10 @@ with bot:
                         [
                             custom.Button.url(
                                 "GitHub Repo",
-                                "https://github.com/mrmissx/userbutt"),
+                                "https://github.com/Axdhu/SamuRai.git"),
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/UserBotIndo")],
+                                "https://t.me/AAXDHU")],
                     ],
                     link_preview=False,
                 )
