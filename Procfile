@@ -1,2 +1,1 @@
-
-   worker: python3 -m samurai
+ worker: python3 -m samurai
