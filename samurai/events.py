@@ -1,8 +1,10 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
+# All rights reserved.
+
 """Userbot module for managing events. One of the main components of the userbot."""
 
 import sys
