@@ -1,7 +1,7 @@
-# Copyright (C) 2020 Alfiananda P.A
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
 
 import asyncio
@@ -9,9 +9,9 @@ import os
 import time
 
 from telethon.tl.types import DocumentAttributeFilename
-from userbot import CMD_HELP, bot
-from userbot.events import register
-from userbot.utils import progress
+from samurai import CMD_HELP, bot
+from samurai.events import register
+from samurai.utils import progress
 
 
 @register(outgoing=True, pattern=r"^\.ssvideo(?: |$)(.*)")
