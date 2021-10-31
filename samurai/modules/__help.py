@@ -1,16 +1,15 @@
-# Copyright (C) 2020 TeamDerUntergang.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
-
-# @Qulec tarafından yazılmıştır.
+# All rights reserved.
 # Thanks @Spechide.
 
 import logging
 
-from userbot import BOT_USERNAME, BOT_TOKEN
-from userbot.events import register
+from samurai import BOT_USERNAME, BOT_TOKEN
+from samurai.events import register
 from telethon.errors.rpcerrorlist import BotInlineDisabledError
 
 logging.basicConfig(
