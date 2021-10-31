@@ -1,7 +1,7 @@
-# Copyright (C) 2020 Adek Maulana.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
 
 import asyncio
@@ -17,9 +17,9 @@ from asyncio import create_subprocess_shell as asyncSubprocess
 from asyncio.subprocess import PIPE as asyncPIPE
 from pySmartDL import SmartDL
 from urllib.error import HTTPError
-from userbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
-from userbot.utils import humanbytes, time_formatter
+from samurai import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from samurai.events import register
+from samurai.utils import humanbytes, time_formatter
 
 
 async def subprocess_run(megadl, cmd):
