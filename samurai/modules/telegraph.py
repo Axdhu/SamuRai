@@ -1,16 +1,16 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
-# Port From UniBorg to UserBot by @afdulfauzan
+# Port From UniBorg 
 
 import os
 from PIL import Image
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
-from userbot import (TEMP_DOWNLOAD_DIRECTORY, CMD_HELP, bot)
-from userbot.events import register
+from samurai import (TEMP_DOWNLOAD_DIRECTORY, CMD_HELP, bot)
+from samurai.events import register
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegraph")
