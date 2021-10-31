@@ -1,154 +1,109 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+# Ultroid - UserBot
+# Copyright (C) 2021 TeamUltroid
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-#
-"""Userbot module for filter commands"""
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# PLease read the GNU Affero General Public License in
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+"""
+✘ Commands Available -
 
-from asyncio import sleep
-from re import search, IGNORECASE, escape
-from userbot import BOTLOG_CHATID, CMD_HELP
-from userbot.events import register
+• `{i}addfilter <word><reply to a message>`
+    add the used word as filter relating to replied message.
 
+• `{i}remfilter <word>`
+    Remove the filtered user..
 
-@register(incoming=True, disable_edited=True, disable_errors=True)
-async def filter_incoming_handler(handler):
-    """Checks if the incoming message contains handler of a filter"""
-    try:
-        if not (await handler.get_sender()).bot:
-            try:
-                from userbot.modules.sql_helper.filter_sql import get_filters
-            except AttributeError:
-                await handler.edit("`Running on Non-SQL mode!`")
-                return
-            name = handler.raw_text
-            filters = get_filters(handler.chat_id)
-            if not filters:
-                return
-            for trigger in filters:
-                pattern = (
-                    r"( |^|[^\w])" + escape(trigger.keyword) + r"( |$|[^\w])")
-                pro = search(pattern, name, flags=IGNORECASE)
-                if pro:
-                    if trigger.f_mesg_id:
-                        msg_o = await handler.client.get_messages(
-                            entity=BOTLOG_CHATID, ids=int(trigger.f_mesg_id))
-                        await handler.reply(msg_o.message, file=msg_o.media)
-                    elif trigger.reply:
-                        await handler.reply(trigger.reply)
-    except AttributeError:
-        pass
+• `{i}listfilter`
+    list all filters.
+"""
+
+import os
+import re
+
+from pyUltroid.dB.filter_db import add_filter, get_filter, list_filter, rem_filter
+from pyUltroid.functions.tools import create_tl_btn, format_btn, get_msg_button
+from telegraph import upload_file as uf
+from telethon.tl.types import User
+from telethon.utils import pack_bot_file_id
+
+from . import eor, events, get_string, mediainfo, ultroid_bot, ultroid_cmd
+from ._inline import something
 
 
-@register(outgoing=True, pattern=r"^.filter (.*)")
-async def add_new_filter(new_handler):
-    """For .filter command, allows adding new filters in a chat"""
-    try:
-        from userbot.modules.sql_helper.filter_sql import add_filter
-    except AttributeError:
-        await new_handler.edit("`Running on Non-SQL mode!`")
-        return
-    value = new_handler.pattern_match.group(1).split(None, 1)
-    """- The first words after .filter(space) is the keyword -"""
-    keyword = value[0]
-    try:
-        string = value[1]
-    except IndexError:
-        string = None
-    msg = await new_handler.get_reply_message()
-    msg_id = None
-    if msg and msg.media and not string:
-        if BOTLOG_CHATID:
-            await new_handler.client.send_message(
-                BOTLOG_CHATID, f"#FILTER\nCHAT ID: {new_handler.chat_id}\nTRIGGER: {keyword}"
-                "\n\nThe following message is saved as the filter's reply data for the chat, please do NOT delete it !!"
-            )
-            msg_o = await new_handler.client.forward_messages(
-                entity=BOTLOG_CHATID,
-                messages=msg,
-                from_peer=new_handler.chat_id,
-                silent=True)
-            msg_id = msg_o.id
+@ultroid_cmd(pattern="addfilter ?(.*)")
+async def af(e):
+    wrd = (e.pattern_match.group(1)).lower()
+    wt = await e.get_reply_message()
+    chat = e.chat_id
+    if not (wt and wrd):
+        return await eor(e, get_string("flr_1"))
+    btn = format_btn(wt.buttons) if wt.buttons else None
+    if wt and wt.media:
+        wut = mediainfo(wt.media)
+        if wut.startswith(("pic", "gif")):
+            dl = await wt.download_media()
+            variable = uf(dl)
+            m = "https://telegra.ph" + variable[0]
+        elif wut == "video":
+            if wt.media.document.size > 8 * 1000 * 1000:
+                return await eor(e, get_string("com_4"), time=5)
+            dl = await wt.download_media()
+            variable = uf(dl)
+            os.remove(dl)
+            m = "https://telegra.ph" + variable[0]
         else:
-            return await new_handler.edit(
-                "`Saving media as reply to the filter requires the BOTLOG_CHATID to be set.`"
-            )
-    elif new_handler.reply_to_msg_id and not string:
-        rep_msg = await new_handler.get_reply_message()
-        string = rep_msg.text
-    success = "`Filter`  **{}**  `{} successfully`."
-    if add_filter(str(new_handler.chat_id), keyword, string, msg_id) is True:
-        await new_handler.edit(success.format(keyword, 'added'))
+            m = pack_bot_file_id(wt.media)
+        if wt.text:
+            txt = wt.text
+            if not btn:
+                txt, btn = get_msg_button(wt.text)
+            add_filter(int(chat), wrd, txt, m, btn)
+        else:
+            add_filter(int(chat), wrd, None, m, btn)
     else:
-        await new_handler.edit(success.format(keyword, 'updated'))
+        txt = wt.text
+        if not btn:
+            txt, btn = get_msg_button(wt.text)
+        add_filter(int(chat), wrd, txt, None, btn)
+    await eor(e, get_string("flr_4").format(wrd))
 
 
-@register(outgoing=True, pattern=r"^.stop (.*)")
-async def remove_a_filter(r_handler):
-    """For .stop command, allows you to remove a filter from a chat."""
-    try:
-        from userbot.modules.sql_helper.filter_sql import remove_filter
-    except AttributeError:
-        return await r_handler.edit("`Running on Non-SQL mode!`")
-    filt = r_handler.pattern_match.group(1)
-    if not remove_filter(r_handler.chat_id, filt):
-        await r_handler.edit("`Filter`  **{}**  `doesn't exist`.".format(filt))
+@ultroid_cmd(pattern="remfilter ?(.*)")
+async def rf(e):
+    wrd = (e.pattern_match.group(1)).lower()
+    chat = e.chat_id
+    if not wrd:
+        return await eor(e, get_string("flr_3"))
+    rem_filter(int(chat), wrd)
+    await eor(e, get_string("flr_5").format(wrd))
+
+
+@ultroid_cmd(pattern="listfilter$")
+async def lsnote(e):
+    x = list_filter(e.chat_id)
+    if x:
+        sd = "Filters Found In This Chats Are\n\n"
+        await eor(e, sd + x)
     else:
-        await r_handler.edit(
-            "`Filter`  **{}**  `was deleted successfully`.".format(filt))
+        await eor(e, get_string("flr_6"))
 
 
-@register(outgoing=True, pattern=r"\.rmbotfilters (.*)")
-async def kick_marie_filter(event):
-    """For .rmfilters command, allows you to kick all Marie(or her clones) filters from a chat."""
-    event.text[0]
-    bot_type = event.pattern_match.group(1).lower()
-    if bot_type not in ["marie", "rose"]:
-        return await event.edit("`That bot is not yet supported!`")
-    await event.edit("```Will be kicking away all Filters!```")
-    await sleep(3)
-    resp = await event.get_reply_message()
-    filters = resp.text.split("-")[1:]
-    for i in filters:
-        if bot_type.lower() == "marie":
-            await event.reply("/stop %s" % (i.strip()))
-        if bot_type.lower() == "rose":
-            i = i.replace('`', '')
-            await event.reply("/stop %s" % (i.strip()))
-        await sleep(0.3)
-    await event.respond(
-        "```Successfully purged bots filters yaay!```\n Gimme cookies!")
-    if BOTLOG_CHATID:
-        await event.client.send_message(
-            BOTLOG_CHATID, "I cleaned all filters at " + str(event.chat_id))
-
-
-@register(outgoing=True, pattern=r"\.filters$")
-async def filters_active(event):
-    """For .filters command, lists all of the active filters in a chat."""
-    try:
-        from userbot.modules.sql_helper.filter_sql import get_filters
-    except AttributeError:
-        return await event.edit("`Running on Non-SQL mode!`")
-    transact = "`There are no filters in this chat.`"
-    filters = get_filters(event.chat_id)
-    for filt in filters:
-        if transact == "`There are no filters in this chat.`":
-            transact = "Active filters in this chat:\n"
-        transact += "`{}`\n".format(filt.keyword)
-    await event.edit(transact)
-
-
-CMD_HELP.update({
-    "filter":
-    "`.filters`"
-    "\nUsage: Lists all active userbot filters in a chat."
-    "\n\n`.filter` <keyword> <reply text> or reply to a message with .filter <keyword>"
-    "\nUsage: Saves the replied message as a reply to the 'keyword'."
-    "\nThe bot will reply to the message whenever 'keyword' is mentioned."
-    "\nWorks with everything from files to stickers."
-    "\n\n`.stop` <filter>"
-    "\nUsage: Stops the specified filter."
-    "\n\n`.rmbotfilters` <marie/rose>"
-    "\nUsage: Removes all filters of admin bots (Currently supported: Marie, Rose and their clones.) in the chat."
-})
+@ultroid_bot.on(events.NewMessage())
+async def fl(e):
+    if isinstance(e.sender, User) and e.sender.bot:
+        return
+    xx = (e.text).lower()
+    chat = e.chat_id
+    x = get_filter(chat)
+    if x:
+        for c in x:
+            pat = r"( |^|[^\w])" + re.escape(c) + r"( |$|[^\w])"
+            if re.search(pat, xx):
+                k = x.get(c)
+                if k:
+                    msg = k["msg"]
+                    media = k["media"]
+                    if k.get("button"):
+                        btn = create_tl_btn(k["button"])
+                        return await something(e, msg, media, btn)
+                    await e.reply(msg, file=media)
