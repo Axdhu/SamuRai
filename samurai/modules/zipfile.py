@@ -1,18 +1,18 @@
-# Copyright (C) 2020 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
-# Port from UniBorg by yincen17
+# Port from UniBorg 
 
 import asyncio
 import zipfile
-from userbot.events import register
+from samurai.events import register
 from datetime import date
 import time
 import os
-from userbot import TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
-from userbot.utils import progress
+from samurai import TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
+from samurai.utils import progress
 
 # ====================
 today = date.today()
