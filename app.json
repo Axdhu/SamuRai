@@ -1,6 +1,6 @@
 {
   "name": "samurai-Userbot",
-  "description": "A Userbot Based On Pyrogram.",
+  "description": "A Userbot Based On telethon.",
   "keywords": [
     "telegram",
     "plugin",
