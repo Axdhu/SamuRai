@@ -1,18 +1,18 @@
-# Copyright (C) 2020 The Authors UniBorg (telegram userbot)
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
 # requires: deezloader hachoir Pillow
-# Ported from UniBorg by AnggaR96s
+# Ported from UniBorg 
 
 import deezloader
 import os
 import shutil
 import time
 
-from userbot.events import register
-from userbot import CMD_HELP, DEEZER_ARL_TOKEN, TEMP_DOWNLOAD_DIRECTORY
+from samurai.events import register
+from samurai import CMD_HELP, DEEZER_ARL_TOKEN, TEMP_DOWNLOAD_DIRECTORY
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeAudio
