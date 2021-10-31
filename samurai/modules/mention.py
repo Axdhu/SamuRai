@@ -20,7 +20,7 @@ import re
 
 from telethon.tl import types
 
-from smurai import CMD_HELP, bot
+from samurai import CMD_HELP, bot
 from samurai.events import register
 
 usernexp = re.compile(r"@(\w{3,32})\[(.+?)\]")
