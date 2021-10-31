@@ -151,7 +151,7 @@
     },
     "DEEZER_ARL_TOKEN": {
       "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
-      "required": "False"
+      "required": False
     },
     "ALIVE_LOGO": {
       "description": "Show Image/Logo in .alive message. the value MUST A DIRECT LINK to the photo unless it'll crash!!",
