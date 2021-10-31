@@ -1,7 +1,7 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
 """Userbot module for getting the date and time of any country or the userbot server."""
 
@@ -11,8 +11,8 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from userbot import CMD_HELP, COUNTRY, TZ_NUMBER
-from userbot.events import register
+from samurai import CMD_HELP, COUNTRY, TZ_NUMBER
+from samurai.events import register
 
 
 async def get_tz(con):
