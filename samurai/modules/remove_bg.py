@@ -1,7 +1,8 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
+#.
 
 # (c) Shrimadhav U K - UniBorg
 # Thanks to Prakasaka for porting.
@@ -9,9 +10,9 @@
 import io
 import os
 import requests
-from userbot.events import register
-from telethon.tl.types import MessageMediaPhoto
-from userbot import CMD_HELP, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY
+from samurai.events import register
+from samurai.tl.types import MessageMediaPhoto
+from samurai import CMD_HELP, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY
 
 
 @register(outgoing=True, pattern=r"\.rbg(?: |$)(.*)")
