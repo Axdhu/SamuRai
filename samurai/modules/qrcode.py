@@ -1,7 +1,7 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+#Copyright (C) 2021 Axdhu/SamuRai
 #
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+#This file is a part of < https://github.com/Axdhu/SamuRai >
+#PLease read the GNU Affero General Public License < https://github.com/Axdhu/SamuRai/blob/main/LICENSE >
 #
 # The entire source code is OSSRPL except 'makeqr and getqr' which is MPL
 # License: MPL and OSSRPL
@@ -16,8 +16,8 @@ from barcode.writer import ImageWriter
 
 from bs4 import BeautifulSoup
 
-from userbot import CMD_HELP, LOGS
-from userbot.events import register
+from samurai import CMD_HELP, LOGS
+from samurai.events import register
 
 
 @register(pattern=r"^.decode$", outgoing=True)
