@@ -9,7 +9,6 @@
 # String Session - Telethon 🖱
 ### Repl 🧨
 
-<a href="https://repl.it/badge/github/Axdhu/SamuRai"><img src="https://replit.com/@Donbosco1/SamuRaisessongen__session.py-blue?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 <a href="https://replit.com/@Donbosco1/SamuRaisessongen"><img src="https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
 ### Locally 🏆
