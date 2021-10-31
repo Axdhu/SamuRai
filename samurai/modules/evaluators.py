@@ -11,8 +11,8 @@ import sys
 import traceback
 from os import remove
 
-from userbot import CMD_HELP, TERM_ALIAS
-from userbot.events import register
+from samurai import CMD_HELP, TERM_ALIAS
+from samurai.events import register
 
 
 @register(outgoing=True, pattern=r"^\.eval(?: |$|\n)([\s\S]*)")
