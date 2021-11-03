@@ -1,5 +1,5 @@
 # using Alpine Edge
-FROM Axdhu/userbutt:latest
+FROM Axdhu/samurai:latest
 
 #
 # Clone repo and prepare working directory
