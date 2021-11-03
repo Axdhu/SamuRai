@@ -7,6 +7,8 @@
     "productivity"
   ],
   "repository": "https://github.com/Axdhu/SamuRai",
+  "website": "https://SamuRai.com",
+  "logo": "https://telegra.ph/file/570dc35a7b34332eaa1db.jpg",
   "stack": "container",
   "env": {
     "API_KEY": {
