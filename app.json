@@ -7,7 +7,6 @@
     "productivity"
   ],
   "repository": "https://github.com/Axdhu/SamuRai",
-  "website": "https://SamuRai.com",
   "logo": "https://telegra.ph/file/570dc35a7b34332eaa1db.jpg",
   "stack": "container",
   "env": {
@@ -154,7 +153,7 @@
     },
     "DEEZER_ARL_TOKEN": {
       "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
-      "required": False
+      "required": false
     },
     "ALIVE_LOGO": {
       "description": "Show Image/Logo in .alive message. the value MUST A DIRECT LINK to the photo unless it'll crash!!",
