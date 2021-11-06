@@ -8,6 +8,7 @@ RUN git clone https://github.com/Axdhu/SamuRai.git /root/userbot
 WORKDIR /root/samurai
 
 # Install requirements
+RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN pip3 install requirements.txt
 
 ENV PATH="/home/samurai/bin:$PATH"
