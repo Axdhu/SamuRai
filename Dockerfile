@@ -3,10 +3,10 @@ ENV PYTHONUNBUFFERED=1
 
 
 #clonning repo 
-RUN git clone https://github.com/Axdhu/SamuRai.git /root/userbot
+RUN git clone https://github.com/Axdhu/SamuRai.git /root/samurai
 
 #working directory 
-RUN mkdir /root/userbot/bin/
+RUN mkdir /root/samurai/bin/
 WORKDIR /root/samurai
 
 
