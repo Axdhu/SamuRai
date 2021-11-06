@@ -7,7 +7,7 @@ RUN git clone https://github.com/Axdhu/SamuRai.git /root/userbot
 
 # Install requirements
 RUN /usr/local/bin/python -m pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN /SamuRai/ pip3 install -r requirements.txt
 
 
 #working directory 
