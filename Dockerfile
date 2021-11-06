@@ -1,14 +1,6 @@
-# using Alpine Edge
-FROM axdhu/samurai:latest
-
-#
-# Clone repo and prepare working directory
-#
-RUN git clone -b sql-extended https://github.com/Axdhu/SamuRai /root/samurai
-RUN mkdir /root/samurai/bin/
-WORKDIR /root/samurai/
-
-# Make open port TCP
-EXPOSE 80 443
-
+FROM python:3.9
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1
+COPY . .
+RUN bash startup.sh
 CMD ["python3","-m","samurai"]
