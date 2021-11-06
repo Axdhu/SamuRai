@@ -8,7 +8,7 @@ RUN git clone https://github.com/Axdhu/SamuRai.git /root/userbot
 WORKDIR /root/samurai
 
 # Install requirements
-RUN pip3 install --no-cache-dir requirements.txt
+RUN pip3 install requirements.txt
 
 ENV PATH="/home/samurai/bin:$PATH"
 
