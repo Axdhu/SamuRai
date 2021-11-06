@@ -12,6 +12,5 @@ WORKDIR /root/samurai
 
 ENV PATH="/home/samurai/bin:$PATH"
 
-RUN bash startup.sh
 
 CMD ["python3","-m","samurai"]
