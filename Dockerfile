@@ -5,14 +5,9 @@ ENV PYTHONUNBUFFERED=1
 #clonning repo 
 RUN git clone https://github.com/Axdhu/SamuRai.git /root/userbot
 
-# Install requirements
-RUN /usr/local/bin/python -m pip install --upgrade pip
-RUN /SamuRai/ pip3 install -r requirements.txt
-
-
 #working directory 
+RUN mkdir /root/userbot/bin/
 WORKDIR /root/samurai
-
 
 
 ENV PATH="/home/samurai/bin:$PATH"
