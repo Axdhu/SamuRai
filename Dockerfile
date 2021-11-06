@@ -1,7 +1,7 @@
 FROM python:3.9
 ENV PYTHONUNBUFFERED=1
 
-FROM Axdhu/samurai:slim-buster
+FROM axdhu/samurai:slim-buster
 
 
 #clonning repo 
