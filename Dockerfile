@@ -1,8 +1,6 @@
 FROM python:3.9
 ENV PYTHONUNBUFFERED=1
 
-FROM /samurai:latest
-
 
 #clonning repo 
 RUN git clone https://github.com/Axdhu/SamuRai.git /root/userbot
