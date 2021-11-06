@@ -271,7 +271,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("I'm [UserButt](https://github.com/Axdhu/SamuRai) modules helper...\nplease make your own bot, don't use mine 😋")
+                await event.reply("I'm [Samurai](https://github.com/Axdhu/SamuRai) modules helper...\nplease make your own bot, don't use mine 😋")
             else:
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
 
