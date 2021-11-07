@@ -30,6 +30,10 @@
       "description": "Enter the Heroku app name here (Must an exact same name with your input above). It helps with userbot updates.",
       "required": ""
     },
+     "MONGO_DB_URI": {
+            "description": "Your MongoDB Atlas URL.",
+            "required": true 
+    },
     "UPSTREAM_REPO_URL": {
       "description": "In case you maintain a fork, add your repo URL here.",
       "value": "https://github.com/Axdhu/SamuRai",
