@@ -34,8 +34,8 @@ async def permitpm(event):
     if event.is_private and event.chat_id != 777000 and event.chat_id != self_user.id and not (
             await event.get_sender()).bot:
         try:
-            from userbot.modules.sql_helper.pm_permit_sql import is_approved
-            from userbot.modules.sql_helper.globals import gvarstatus
+            from samurai.modules.sql_helper.pm_permit_sql import is_approved
+            from samurai.modules.sql_helper.globals import gvarstatus
         except AttributeError:
             return
         apprv = is_approved(event.chat_id)
@@ -115,9 +115,9 @@ async def auto_accept(event):
     if event.is_private and event.chat_id != 777000 and event.chat_id != self_user.id and not (
             await event.get_sender()).bot:
         try:
-            from userbot.modules.sql_helper.pm_permit_sql import is_approved
-            from userbot.modules.sql_helper.pm_permit_sql import approve
-            from userbot.modules.sql_helper.globals import gvarstatus
+            from samurai.modules.sql_helper.pm_permit_sql import is_approved
+            from samurai.modules.sql_helper.pm_permit_sql import approve
+            from samurai.modules.sql_helper.globals import gvarstatus
         except AttributeError:
             return
 
@@ -153,7 +153,7 @@ async def auto_accept(event):
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
-        from userbot.modules.sql_helper.globals import addgvar
+        from samurai.modules.sql_helper.globals import addgvar
     except AttributeError:
         await noff_event.edit("`Running on Non-SQL mode!`")
         return
@@ -165,7 +165,7 @@ async def notifoff(noff_event):
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
-        from userbot.modules.sql_helper.globals import delgvar
+        from samurai.modules.sql_helper.globals import delgvar
     except AttributeError:
         await non_event.edit("`Running on Non-SQL mode!`")
         return
@@ -177,8 +177,8 @@ async def notifon(non_event):
 async def approvepm(apprvpm):
     """For .approve command, give someone the permissions to PM you."""
     try:
-        from userbot.modules.sql_helper.pm_permit_sql import approve
-        from userbot.modules.sql_helper.globals import gvarstatus
+        from samurai.modules.sql_helper.pm_permit_sql import approve
+        from samurai.modules.sql_helper.globals import gvarstatus
     except AttributeError:
         await apprvpm.edit("`Running on Non-SQL mode!`")
         return
@@ -225,7 +225,7 @@ async def approvepm(apprvpm):
 @register(outgoing=True, pattern=r"^.disapprove$")
 async def disapprovepm(disapprvpm):
     try:
-        from userbot.modules.sql_helper.pm_permit_sql import dissprove
+        from samurai.modules.sql_helper.pm_permit_sql import dissprove
     except BaseException:
         await disapprvpm.edit("`Running on Non-SQL mode!`")
         return
@@ -271,7 +271,7 @@ async def blockpm(block):
         uid = block.chat_id
 
     try:
-        from userbot.modules.sql_helper.pm_permit_sql import dissprove
+        from samurai.modules.sql_helper.pm_permit_sql import dissprove
         dissprove(uid)
     except AttributeError:
         pass
@@ -307,7 +307,7 @@ async def add_pmsg(cust_msg):
     if not PM_AUTO_BAN:
         return await cust_msg.edit("You need to set `PM_AUTO_BAN` to `True`")
     try:
-        import userbot.modules.sql_helper.globals as sql
+        import samurai.modules.sql_helper.globals as sql
     except AttributeError:
         await cust_msg.edit("`Running on Non-SQL mode!`")
         return
